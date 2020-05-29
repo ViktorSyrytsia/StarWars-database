@@ -15,6 +15,12 @@ const App = () => {
   const [allPlanets, setAllPlanets] = useState([]);
   const [allStarships, setAllStarships] = useState([]);
 
+  const [selectedItem, setSelectedItem] = useState({});
+  const onSelectItem = (item) => {
+    setSelectedItem(item)
+  };
+
+
   const getPersonsList = () => {
     service.getAllPeople()
       .then((persons) => setAllPersons(persons))
@@ -28,6 +34,7 @@ const App = () => {
       .then((starships) => setAllStarships(starships))
   }
 
+
   return (
     <div>
       <Header />
@@ -35,12 +42,12 @@ const App = () => {
 
       <div className="row mb2">
         <div className="col-md-6">
-          <ItemList getResource={() => getPersonsList()} data={allPersons} />
-          <ItemList getResource={() => getPlanetsList()} data={allPlanets} />
-          <ItemList getResource={() => getStarshipsList()} data={allStarships} />
+          <ItemList onSelectItem={onSelectItem} getResource={() => getPersonsList()} data={allPersons} />
+          <ItemList onSelectItem={onSelectItem} getResource={() => getPlanetsList()} data={allPlanets} />
+          <ItemList onSelectItem={onSelectItem} getResource={() => getStarshipsList()} data={allStarships} />
         </div>
         <div className="col-md-6">
-          <PersonDetails />
+          <PersonDetails item={selectedItem} />
         </div>
       </div>
     </div>
