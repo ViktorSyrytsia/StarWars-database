@@ -46,9 +46,21 @@ const App = () => {
 
       <div className="row mb2">
         <div className="col-md-6">
-          <ItemList onSelectItem={onSelectItem} getResource={getPersonsList} data={allPersons} />
-          <ItemList onSelectItem={onSelectItem} getResource={getPlanetsList} data={allPlanets} />
-          <ItemList onSelectItem={onSelectItem} getResource={getStarshipsList} data={allStarships} />
+          <ItemList
+            onSelectItem={onSelectItem}
+            getResource={getPersonsList}
+            data={allPersons}
+            renderItem={(item) => (<><span>{item.name}</span> <span>({item.birthYear} / {item.gender})</span></>)} />
+          <ItemList
+            onSelectItem={onSelectItem}
+            getResource={getPlanetsList}
+            data={allPlanets}
+            renderItem={(item) => (<><span>{item.name}</span> <span>({item.diameter} / {item.population})</span></>)} />
+          <ItemList
+            onSelectItem={onSelectItem}
+            getResource={getStarshipsList}
+            data={allStarships}
+            renderItem={(item) => (<><span>{item.name}</span> <span>({item.model} / {item.crew})</span></>)} />
         </div>
         <div className="col-md-6">
           <PersonDetails item={selectedItem} />

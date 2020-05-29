@@ -2,7 +2,22 @@ import React, { useState, useEffect } from 'react';
 
 import './item-list.css';
 
-const ItemList = ({ getResource, data, onSelectItem }) => {
+const ItemList = ({ getResource, data, onSelectItem, renderItem }) => {
+
+
+  const renderItems = (data) => {
+
+    return data.map((item) => {
+      const { id } = item;
+      const label = renderItem(item);
+
+      return (<li
+        key={id + label}
+        onClick={() => onSelectItem(item)}
+        className="list-group-item">{label}
+      </li>)
+    })
+  }
 
   useEffect(() => {
     getResource()
@@ -10,7 +25,7 @@ const ItemList = ({ getResource, data, onSelectItem }) => {
 
   return (
     <ul className="item-list list-group">
-      {data.map((item) => (<li key={item.id + item.name} onClick={() => onSelectItem(item)} className="list-group-item">{item.name}</li>))}
+      {renderItems(data)}
     </ul>
   )
 }
