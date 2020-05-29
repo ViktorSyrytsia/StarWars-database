@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import ItemList from '../item-list';
@@ -23,7 +23,11 @@ const App = () => {
 
   const getPersonsList = () => {
     service.getAllPeople()
-      .then((persons) => setAllPersons(persons))
+      .then((persons) => {
+        setAllPersons(persons);
+        onSelectItem(persons[0])
+
+      })
   }
   const getPlanetsList = () => {
     service.getAllPlanets()
@@ -42,9 +46,9 @@ const App = () => {
 
       <div className="row mb2">
         <div className="col-md-6">
-          <ItemList onSelectItem={onSelectItem} getResource={() => getPersonsList()} data={allPersons} />
-          <ItemList onSelectItem={onSelectItem} getResource={() => getPlanetsList()} data={allPlanets} />
-          <ItemList onSelectItem={onSelectItem} getResource={() => getStarshipsList()} data={allStarships} />
+          <ItemList onSelectItem={onSelectItem} getResource={getPersonsList} data={allPersons} />
+          <ItemList onSelectItem={onSelectItem} getResource={getPlanetsList} data={allPlanets} />
+          <ItemList onSelectItem={onSelectItem} getResource={getStarshipsList} data={allStarships} />
         </div>
         <div className="col-md-6">
           <PersonDetails item={selectedItem} />
