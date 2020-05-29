@@ -46,16 +46,22 @@ const App = () => {
   }
   const getPlanetsList = () => {
     service.getAllPlanets()
-      .then((planets) => setAllPlanets(planets))
+      .then((planets) => {
+        setAllPlanets(planets);
+        onSelectItem(planets[2])
+      })
   }
   const getStarshipsList = () => {
     service.getAllStarships()
-      .then((starships) => setAllStarships(starships))
+      .then((starships) => {
+        setAllStarships(starships)
+        onSelectItem(starships[3])
+      })
   }
 
 
   return (
-    <div>
+    <div className="app">
       <Header />
       <RandomPlanet />
       <button onClick={() => onChangeTable('persons')}>Persons</button>

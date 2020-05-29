@@ -4,37 +4,30 @@ import './planet-details.css';
 
 const PlanetDetail = ({ item }) => {
 
-        const { name, gender, birthYear, eyeColor, id, height, mass } = item
+        const { name, population, diameter, rotationPeriod, id } = item
 
         return (
                 <div>
                         <div className="person-details card">
                                 <img className="person-image"
-                                        src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} />
+                                        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} />
 
                                 <div className="card-body">
                                         <h4>{name}</h4>
                                         <ul className="list-group list-group-flush">
                                                 <li className="list-group-item">
                                                         <span className="term">Gender</span>
-                                                        <span>{gender}</span>
+                                                        <span>{population}</span>
                                                 </li>
                                                 <li className="list-group-item">
                                                         <span className="term">Birth Year</span>
-                                                        <span>{birthYear}</span>
+                                                        <span>{diameter}</span>
                                                 </li>
                                                 <li className="list-group-item">
                                                         <span className="term">Eye Color</span>
-                                                        <span>{eyeColor}</span>
+                                                        <span>{rotationPeriod}</span>
                                                 </li>
-                                                <li className="list-group-item">
-                                                        <span className="term">Height:</span>
-                                                        <span>{height}</span>
-                                                </li>
-                                                <li className="list-group-item">
-                                                        <span className="term">Mass:</span>
-                                                        <span>{mass}</span>
-                                                </li>
+
                                         </ul>
                                 </div>
                         </div>

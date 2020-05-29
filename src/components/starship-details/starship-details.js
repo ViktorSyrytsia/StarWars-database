@@ -4,36 +4,36 @@ import './starship-details.css';
 
 const StarshipDetail = ({ item }) => {
 
-        const { name, gender, birthYear, eyeColor, id, height, mass } = item
+        const { name, model, costInCredits, crew, id, passengers, cargoCapacity } = item
 
         return (
                 <div>
                         <div className="person-details card">
                                 <img className="person-image"
-                                        src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} />
+                                        src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`} />
 
                                 <div className="card-body">
                                         <h4>{name}</h4>
                                         <ul className="list-group list-group-flush">
                                                 <li className="list-group-item">
-                                                        <span className="term">Gender</span>
-                                                        <span>{gender}</span>
+                                                        <span className="term">Model</span>
+                                                        <span>{model}</span>
                                                 </li>
                                                 <li className="list-group-item">
-                                                        <span className="term">Birth Year</span>
-                                                        <span>{birthYear}</span>
+                                                        <span className="term">Crew</span>
+                                                        <span>{crew}</span>
                                                 </li>
                                                 <li className="list-group-item">
-                                                        <span className="term">Eye Color</span>
-                                                        <span>{eyeColor}</span>
+                                                        <span className="term">Passengers</span>
+                                                        <span>{passengers}</span>
                                                 </li>
                                                 <li className="list-group-item">
-                                                        <span className="term">Height:</span>
-                                                        <span>{height}</span>
+                                                        <span className="term">Cost in credits:</span>
+                                                        <span>{costInCredits}</span>
                                                 </li>
                                                 <li className="list-group-item">
-                                                        <span className="term">Mass:</span>
-                                                        <span>{mass}</span>
+                                                        <span className="term">Cargo capacity:</span>
+                                                        <span>{cargoCapacity}</span>
                                                 </li>
                                         </ul>
                                 </div>
