@@ -13,7 +13,7 @@ const StarshipDetail = ({ item }) => {
                                         src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`} />
 
                                 <div className="card-body">
-                                        <h4>{name}</h4>
+                                        <div className="person-name">{name}</div>
                                         <ul className="list-group list-group-flush">
                                                 <li className="list-group-item">
                                                         <span className="term">Model</span>

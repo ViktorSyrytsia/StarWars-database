@@ -64,9 +64,9 @@ const App = () => {
     <div className="app">
       <Header />
       <RandomPlanet />
-      <button onClick={() => onChangeTable('persons')}>Persons</button>
-      <button onClick={() => onChangeTable('planets')}>Planets</button>
-      <button onClick={() => onChangeTable('starships')}>Starships</button>
+      <button className="table-button" onClick={() => onChangeTable('persons')}>Persons</button>
+      <button className="table-button" onClick={() => onChangeTable('planets')}>Planets</button>
+      <button className="table-button" onClick={() => onChangeTable('starships')}>Starships</button>
       <div className="row mb2">
 
         <div className="col-md-6">
