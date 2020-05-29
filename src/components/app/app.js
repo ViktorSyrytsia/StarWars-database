@@ -74,17 +74,17 @@ const App = () => {
             onSelectItem={onSelectItem}
             getResource={getPersonsList}
             data={allPersons}
-            renderItem={(item) => (<><span>{item.name}</span> <span>({item.birthYear} / {item.gender})</span></>)} />) : null}
+            renderItem={(item) => (<><span className="name">{item.name}</span> <span>({item.birthYear} / {item.gender})</span></>)} />) : null}
           {table === 'planets' ? (<ItemList
             onSelectItem={onSelectItem}
             getResource={getPlanetsList}
             data={allPlanets}
-            renderItem={(item) => (<><span>{item.name}</span> <span>({item.diameter} / {item.population})</span></>)} />) : null}
+            renderItem={(item) => (<><span className="name">{item.name}</span> <span>({item.diameter} / {item.population})</span></>)} />) : null}
           {table === 'starships' ? (<ItemList
             onSelectItem={onSelectItem}
             getResource={getStarshipsList}
             data={allStarships}
-            renderItem={(item) => (<><span>{item.name}</span> <span>({item.model} / {item.crew})</span></>)} />) : null}
+            renderItem={(item) => (<><span className="name">{item.name}</span> <span>({item.model} / {item.crew})</span></>)} />) : null}
         </div>
         {table === 'persons' ? (<div className="col-md-6">
           <PersonDetails item={selectedItem} />

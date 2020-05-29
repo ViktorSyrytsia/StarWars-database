@@ -1,13 +1,16 @@
 .header {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   padding-left: 10px;
 }
 
 .header ul li {
   list-style: none;
   margin: 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 3px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .header ul li:hover {
@@ -19,6 +22,7 @@
 }
 
 .header h3 a {
+  font-family: "Press Start 2P", cursive;
   color: white;
 }
 

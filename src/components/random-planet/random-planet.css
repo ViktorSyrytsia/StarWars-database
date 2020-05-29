@@ -42,3 +42,11 @@
   font-size: 24px;
   color: rgb(226, 160, 36);
 }
+.planet-name {
+  font-family: "Press Start 2P", cursive;
+  color: rgb(226, 160, 36);
+}
+.term {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}

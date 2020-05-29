@@ -44,7 +44,7 @@ function RandomPlanet() {
 
   const dataBlock = (<div>
 
-    <h4>{name}</h4>
+    <h4 className="planet-name">{name}</h4>
     <ul className="list-group list-group-flush">
       <li className="list-group-item">
         <span className="term">Population:</span>
