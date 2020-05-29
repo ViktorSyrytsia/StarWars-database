@@ -16,15 +16,15 @@ const PlanetDetail = ({ item }) => {
                                         <div className="person-name">{name}</div>
                                         <ul className="list-group list-group-flush">
                                                 <li className="list-group-item">
-                                                        <span className="term">Gender</span>
+                                                        <span className="term">Population: </span>
                                                         <span>{population}</span>
                                                 </li>
                                                 <li className="list-group-item">
-                                                        <span className="term">Birth Year</span>
+                                                        <span className="term">Diameter: </span>
                                                         <span>{diameter}</span>
                                                 </li>
                                                 <li className="list-group-item">
-                                                        <span className="term">Eye Color</span>
+                                                        <span className="term">Rotation period:</span>
                                                         <span>{rotationPeriod}</span>
                                                 </li>
 

@@ -16,19 +16,19 @@ const PersonDetails = ({ item }) => {
           <div className="person-name">{name}</div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
-              <span className="term">Gender</span>
+              <span className="term">Gender: </span>
               <span>{gender}</span>
             </li>
             <li className="list-group-item">
-              <span className="term">Birth Year</span>
+              <span className="term">Birth Year: </span>
               <span>{birthYear}</span>
             </li>
             <li className="list-group-item">
-              <span className="term">Eye Color</span>
+              <span className="term">Eye Color: </span>
               <span>{eyeColor}</span>
             </li>
             <li className="list-group-item">
-              <span className="term">Height:</span>
+              <span className="term">Height: </span>
               <span>{height}</span>
             </li>
             <li className="list-group-item">
