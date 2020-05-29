@@ -12,13 +12,15 @@ function RandomPlanet() {
 
   const [planet, setPlanet] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   const onError = (error) => {
-    console.log(error);
+    setError(true);
+    setIsLoaded(false);
   }
 
   const onPlanetLoaded = (planet) => {
-    setIsLoaded(true)
+    setIsLoaded(true);
     setPlanet(planet);
   }
 
@@ -30,13 +32,15 @@ function RandomPlanet() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      updatePlanet(Math.floor(Math.random() * 25) + 2)
+      updatePlanet(Math.floor(Math.random() * 15) + 2)
     }, 2000);
     return () => clearInterval(interval);
   }, []
   )
 
   const { id, name, population, rotationPeriod, diameter } = planet;
+
+  const errorMassage = (<div className="error">Sorry, smth went wrong...</div>)
 
   const dataBlock = (<div>
 
@@ -63,6 +67,7 @@ function RandomPlanet() {
 
 
     <div className="random-planet jumbotron rounded">
+      {error ? errorMassage : null}
       {!isLoaded ? (<div className="loader" ><Loader /></div>) : (<img className="planet-image"
         src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="Planet_image" />)}
       {isLoaded ? dataBlock : null}

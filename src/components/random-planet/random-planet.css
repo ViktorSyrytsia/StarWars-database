@@ -38,3 +38,7 @@
   border-radius: 10px;
   margin-right: 1rem;
 }
+.error {
+  font-size: 24px;
+  color: rgb(226, 160, 36);
+}

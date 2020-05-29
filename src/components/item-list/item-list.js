@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './item-list.css';
 
-export default class ItemList extends Component {
+const ItemList = ({ getResource, data }) => {
 
-  render() {
-    return (
-      <ul className="item-list list-group">
-        <li className="list-group-item">
-          Luke Skywalker
-        </li>
-        <li className="list-group-item">
-          Darth Vader
-        </li>
-        <li className="list-group-item">
-          R2-D2
-        </li>
-      </ul>
-    );
-  }
+  useEffect(() => {
+    getResource()
+  }, [])
+
+  return (
+    <ul className="item-list list-group">
+      {data.map((item) => (<li key={item.id + item.name} className="list-group-item">{item.name}</li>))}
+    </ul>
+  )
 }
+
+export default ItemList
