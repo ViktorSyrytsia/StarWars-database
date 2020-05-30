@@ -10,7 +10,9 @@ const StarshipDetail = ({ item }) => {
                 <div>
                         <div className="person-details card">
                                 <img className="person-image"
-                                        src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`} />
+                                        src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
+                                        alt="Oops :("
+                                />
 
                                 <div className="card-body">
                                         <div className="person-name">{name}</div>
