@@ -13,10 +13,6 @@
   font-size: 20px;
 }
 
-.header ul li:hover {
-  background-color: #444;
-}
-
 .header a:hover {
   text-decoration: none;
 }
@@ -28,4 +24,20 @@
 
 .header h3 a:hover {
   color: #00bc8c;
+}
+
+.table-button {
+  border-radius: 10px;
+  height: 50px;
+  width: 200px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+  font-family: "Press Start 2P", cursive;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.table-button:hover {
+  background-color: rgb(226, 160, 36);
+  border: none;
 }

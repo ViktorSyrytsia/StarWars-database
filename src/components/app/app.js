@@ -62,13 +62,10 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header />
+      <Header onChangeTable={onChangeTable} />
       <RandomPlanet />
-      <button className="table-button" onClick={() => onChangeTable('persons')}>Persons</button>
-      <button className="table-button" onClick={() => onChangeTable('planets')}>Planets</button>
-      <button className="table-button" onClick={() => onChangeTable('starships')}>Starships</button>
-      <div className="row mb2">
 
+      <div className="row mb2">
         <div className="col-md-6">
           {table === 'persons' ? (<ItemList
             onSelectItem={onSelectItem}
